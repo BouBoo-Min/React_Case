@@ -1,0 +1,11 @@
+import {ADDPERSON} from '../constant'
+const initState = [{id:1, name:'tom', age:18}]
+export default function Person (preState=initState,action) {
+    const {type, data} = action
+    switch (type) {
+        case ADDPERSON:
+            return [data, ...preState]
+        default:
+            return preState
+    }
+}
